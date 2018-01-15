@@ -100,9 +100,6 @@ const uint8_t PROGMEM gamma8[] = {
 byte dataBuffer[4096];
 byte bufferSwap[4096];
 
-int seed = 4;
-byte randNumber;
-
 void setup()
 {
 
@@ -128,20 +125,13 @@ void setup()
 	Timer1.pwm(OEP, pwmDuty);
 	row = 0;
 
-	//convBuffer();
+	convData2Buffer(mario);
 
 	timerInit();
-
-	randomSeed(seed);
 }
-
-byte testData[6] = {1, 2, 4, 8, 16, 32};
-byte ctr = 0;
 
 void loop()
 {
-	convData2Buffer(mario);
-	while(1);
 }
 
 void timerInit() {
